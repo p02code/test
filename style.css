@@ -1,0 +1,251 @@
+:root {
+  --primary: #3a86ff;
+  --primary-dark: #2667cc;
+  --secondary: #ff006e;
+  --background: #f8f9fa;
+  --surface: #ffffff;
+  --text: #333333;
+  --text-light: #666666;
+  --border: #e0e0e0;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --surface: #fff;
+  --border: #ddd;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --font-family: 'Arial, sans-serif';
+  --font-size: 16px;
+  --font-color: #333;
+  --spacing: 1rem;
+  --radius: 1rem;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background-color: var(--surface);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-details {
+  padding: 1.5rem;
+}
+
+.product-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.add-to-basket {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary);
+  color: var(--surface);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.add-to-basket:hover {
+  background-color: var(--primary-dark);
+}
+
+.basket-items {
+  list-style-type: none;
+  padding: var(--spacing);
+  margin: 0 auto;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.basket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing);
+  padding-bottom: var(--spacing);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease;
+}
+
+.basket-item:hover {
+  background: var(--background);
+}
+
+.basket-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.basket-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.basket-item-quantity button {
+  background-color: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.basket-item-quantity button:hover {
+  background-color: darken(var(--primary), 10%);
+}
+
+.basket-item-name {
+  flex-grow: 1;
+  margin-right: var(--spacing);
+  font-weight: bold;
+}
+
+.basket-item-price {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .basket-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .basket-item-quantity {
+    margin-top: var(--spacing);
+  }
+
+  .basket-item-name {
+    margin-right: 0;
+  }
+}
+
+.quantity-btn {
+  background-color: var(--primary);
+  color: var(--surface);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.quantity-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.basket-total {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  text-align: right;
+  color: var(--secondary);
+}
+
+.whatsapp-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #25D366;
+  color: var(--surface);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: var(--transition);
+}
+
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+}
+
+.whatsapp-btn:disabled {
+  background-color: var(--text-light);
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding: 1rem;
+  }
+
+  .product-grid {
+      gap: 1rem;
+  }
+
+  .basket {
+      padding: 1.5rem;
+  }
+}
